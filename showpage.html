@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOW PAGE</title>
+</head>
+<form method="post" >
+{% csrf_token %}
+<body>
+<h1>Candidate details-</h1><br>
+<h3>You are sucessfull logged to your account</h3>
+<table border="1">
+    <tr>
+        <th>username</th>
+        <th>current balance</th>
+    </tr>
+    {% for rec in records %}
+    <tr>
+        <td>{{ rec.uname }}</td>
+        <td>{{ rec.actbal }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/userapp/homepage">GO back TO HOME PAGE</a><br>
+</body>
+</html>

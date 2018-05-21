@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result :</title>
+</head>
+<body><form method="post">
+    {% csrf_token %}
+<h1>Transaction details</h1><br>
+<br>
+<h4>Your Transaction was sucessfull----</h4>
+<table border="1">
+    <tr>
+        <th>Your username</th>
+        <th>your current balance</th>
+        <th>your splited balance</th>
+        <th>your balance send to</th>
+        <th>your friebd account number</th>
+    </tr>
+     {% for re in record %}
+    <tr>
+        <td>{{ re.uname }}</td>
+        <td>{{ re.actbal }}</td>
+        <td>{{ re.splitbal }}</td>
+        <td>{{ re.paidto }}</td>
+        <td>{{ re.facnum }}</td>
+    </tr>
+    {%  endfor %}
+</table>
+</form>
+<br>
+<a href="/userapp/loginpage1">Click here to go back homepage</a><br>
+</body>
+</html>

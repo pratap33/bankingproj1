@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOW PAGE</title>
+</head>
+<form action="./split" method="post">
+{% csrf_token %}
+<body>
+<table border="1">
+    <tr>
+        <th>Your username</th>
+        <th>your current balance</th>
+    </tr>
+     {% for rec in records %}
+    <tr>
+        <td>{{ rec.uname }}</td>
+        <td>{{ rec.actbal }}</td>
+    </tr>
+    {%  endfor %}
+</table>
+    Enter the username name :<input type="text" name="t6"><br>
+    Enter the name of your friend :<input type="text" name="t3"><br>
+    Enter the amount you want to spilt:<input type="text" name="t4"><br>
+    Enter your friend account number:<input type="text" name="t5"><br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
